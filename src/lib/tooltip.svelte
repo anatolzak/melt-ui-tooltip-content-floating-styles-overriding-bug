@@ -7,8 +7,8 @@
 
 	onMount(() => {
 		const observer = new MutationObserver(() => {
-			const { offsetLeft, offsetTop } = el;
-			console.log({ offsetLeft, offsetTop });
+			const { top, left } = getComputedStyle(el);
+			console.log({ top, left });
 		});
 
 		observer.observe(el, { attributes: true });
